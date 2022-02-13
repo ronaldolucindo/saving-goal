@@ -18,7 +18,7 @@ function Input(props) {
   );
 }
 
-Input.defaultValues = {
+Input.defaultProps = {
   type: 'text',
 };
 

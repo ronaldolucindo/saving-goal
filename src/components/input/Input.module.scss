@@ -12,11 +12,9 @@
 
   .input-box {
     width: 100%;
-    padding: 0 $padding-s;
     display: flex;
-    column-gap: $margin-xs;
     align-items: center;
-    border: 1px solid #e9eef2;
+    border: 1px solid $color-gray50;
     height: $form-element-height;
     border-radius: $border-radius-s;
     background: #fff;
@@ -24,6 +22,7 @@
   .input-prepend {
     width: 24px;
     height: 24px;
+    margin: 0 8px;
   }
   input {
     font-family: 'Rubik';
