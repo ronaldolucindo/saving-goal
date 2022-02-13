@@ -1,0 +1,45 @@
+@import '/src/styles/variables';
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  label {
+    font-family: 'Work Sans';
+    font-size: 14px;
+  }
+
+  .input-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $color-gray50;
+    height: $form-element-height;
+    border-radius: $border-radius-s;
+    padding: 4px $padding-m;
+    background: #fff;
+  }
+
+  button {
+    background: none;
+    cursor: pointer;
+  }
+
+  .value-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Work Sans';
+
+    .month {
+      font-weight: 600;
+    }
+
+    .year {
+      color: $color-gray400;
+    }
+  }
+}
