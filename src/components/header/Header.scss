@@ -1,0 +1,12 @@
+@import 'styles/_variables';
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  padding: 0 56px;
+  background: #fff;
+}
