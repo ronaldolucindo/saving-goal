@@ -1,0 +1,36 @@
+@import '/src/styles/variables';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  label {
+    font-family: 'Work Sans';
+    font-size: 14px;
+  }
+
+  .input-box {
+    width: 100%;
+    padding: 0 $padding-s;
+    display: flex;
+    column-gap: $margin-xs;
+    align-items: center;
+    border: 1px solid #e9eef2;
+    height: $form-element-height;
+    border-radius: $border-radius-s;
+    background: #fff;
+  }
+  .input-prepend {
+    width: 24px;
+    height: 24px;
+  }
+  input {
+    font-family: 'Rubik';
+    color: $color-gray600;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
