@@ -3,7 +3,6 @@
     "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
   "rules": {
@@ -17,5 +16,5 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["react-hooks", "@typescript-eslint", "prettier"]
+  "plugins": ["react-hooks", "prettier"]
 }
