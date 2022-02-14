@@ -1,6 +1,8 @@
 import makeReducer from 'common/make-reducer';
 import DateUtils from 'common/date';
 
+const MAX_AMOUNT_VALUE = 100_000_000_000;
+
 const INITIAL_STATE = {
   amount: '0.00',
   reachDate: {
@@ -26,9 +28,8 @@ const SAVING_GOALS_REDUCER_CONFIG = {
       ?.replace('.', '')
       ?.replace(',', '')
       ?.replace(/\D/g, '');
-    const validValue = isFinite(Number(cleanAmount))
-      ? cleanAmount
-      : Number.MAX_SAFE_INTEGER;
+    const validValue =
+      Number(cleanAmount) < MAX_AMOUNT_VALUE ? cleanAmount : MAX_AMOUNT_VALUE;
 
     return {
       ...state,
@@ -64,7 +65,7 @@ const SAVING_GOALS_REDUCER_CONFIG = {
     };
   },
   [SAVING_GOALS_ACTIONS.APP_PROCESS_GOAL]: (state) => {
-    const canProcess = Number.parseFloat(state.amount?.replace(',', '')) > 0;
+    const canProcess = Number.parseFloat(state.amount?.replaceAll(',', '')) > 0;
     if (!canProcess) return { ...state, canShowSummary: false };
 
     const today = new Date();
@@ -72,7 +73,7 @@ const SAVING_GOALS_REDUCER_CONFIG = {
     const numberOfMonths = DateUtils.getMonthDifference(today, goalDate) || 1;
 
     const resultAmount = (
-      Number.parseFloat(state.amount?.replace(',', '')) / numberOfMonths
+      Number.parseFloat(state.amount?.replaceAll(',', '')) / numberOfMonths
     ).toFixed(2);
 
     return {
