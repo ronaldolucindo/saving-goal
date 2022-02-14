@@ -10,7 +10,12 @@ function Input(props) {
       <label htmlFor={inputProps.name}>{label}</label>
       <div className={inputStyles['input-box']}>
         {!!prepend && (
-          <span className={inputStyles['input-prepend']}>{prepend}</span>
+          <span
+            className={inputStyles['input-prepend']}
+            data-testid="Input.prepend"
+          >
+            {prepend}
+          </span>
         )}
         <input {...inputProps} />
       </div>

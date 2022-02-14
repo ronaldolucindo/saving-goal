@@ -34,6 +34,8 @@ function SavingGoalsPage() {
               <div className="input-container">
                 <div className="total-amount">
                   <Input
+                    name="amount"
+                    id="amount"
                     label="Total amount"
                     value={state.amount}
                     onChange={actions.userTypesAmount}
