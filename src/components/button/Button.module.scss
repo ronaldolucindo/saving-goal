@@ -13,4 +13,8 @@
   background: $color-primary;
   border-radius: $border-radius-l;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }

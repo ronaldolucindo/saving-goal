@@ -25,6 +25,10 @@
   button {
     background: none;
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   .value-container {

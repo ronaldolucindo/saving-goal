@@ -7,11 +7,11 @@ function Card(props) {
 }
 
 Card.propTypes = {
-  children: PropTypes.oneOfType(
+  children: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
-    PropTypes.node
-  ),
+    PropTypes.node,
+  ]),
 };
 
 export default Card;

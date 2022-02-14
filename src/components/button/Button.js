@@ -16,11 +16,11 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOfType(
+  children: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
-    PropTypes.node
-  ),
+    PropTypes.node,
+  ]),
   name: PropTypes.string,
   type: PropTypes.string,
   onChange: PropTypes.func,

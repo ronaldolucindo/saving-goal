@@ -24,11 +24,11 @@ Input.defaultProps = {
 
 Input.propTypes = {
   label: PropTypes.string,
-  prepend: PropTypes.oneOfType(
+  prepend: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
-    PropTypes.node
-  ),
+    PropTypes.node,
+  ]),
   name: PropTypes.string,
   value: PropTypes.string,
   type: PropTypes.string,
