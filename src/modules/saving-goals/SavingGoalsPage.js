@@ -3,12 +3,17 @@ import Card from 'components/card/Card';
 import Header from 'components/header/Header';
 import Input from 'components/input/Input';
 import Button from 'components/button/Button';
+import DateInput from 'components/date-input/DateInput';
+import ResultSummary from './components/result-summary/ResultSummary';
+import useSavingGoals from './useSavingGoals';
+
 import './SavingGoalsPage.scss';
 import { ReactComponent as DollarSign } from 'assets/icons/dollar-sign.svg';
 import { ReactComponent as HouseIcon } from 'assets/icons/buy-a-house.svg';
-import ResultSummary from './components/result-summary/ResultSummary';
 
 function SavingGoalsPage() {
+  const { state, ...actions } = useSavingGoals();
+
   return (
     <>
       <Header />
@@ -25,19 +30,37 @@ function SavingGoalsPage() {
                 <p className="subtitle">Saving goal</p>
               </div>
             </div>
-            <form noValidate>
-              <Input label="Total amount" prepend={<DollarSign />} />
-
-              <ResultSummary
-                monthDeadline={'October'}
-                yearDeadline={2022}
-                monthlyAmount={1200}
-                totalMonths={12}
-                totalValue={20000}
+            <form noValidate onSubmit={actions.userSubmitsForm}>
+              <Input
+                label="Total amount"
+                value={state.amount}
+                onChange={actions.userTypesAmount}
+                pattern="[0-9]"
+                prepend={<DollarSign />}
               />
-              <div className="actions-container">
-                <Button>Confirm</Button>
-              </div>
+              <DateInput
+                label="Reach goal by"
+                yearValue={state.reachDate.year}
+                monthValue={actions.getMonthName()}
+                onNextMonth={actions.userSetsNextMonth}
+                onPrevMonth={actions.userSetsPrevMonth}
+                isPrevMonthDisabled={actions.isPrevMonthDisabled()}
+              />
+
+              {state.canSubmit && (
+                <>
+                  <ResultSummary
+                    monthDeadline={actions.getMonthName()}
+                    yearDeadline={state.reachDate.year}
+                    monthlyAmount={state.monthlyAmount}
+                    totalMonths={state.totalMonth}
+                    totalValue={state.amount}
+                  />
+                  <div className="actions-container">
+                    <Button type="submit">Confirm</Button>
+                  </div>
+                </>
+              )}
             </form>
           </Card>
         </section>

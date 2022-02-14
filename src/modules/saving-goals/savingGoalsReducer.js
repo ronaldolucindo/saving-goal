@@ -11,7 +11,7 @@ const INITIAL_STATE = {
   },
   monthlyAmount: 0,
   totalMonth: 0,
-  canShowSummary: false,
+  canSubmit: false,
 };
 
 export const SAVING_GOALS_ACTIONS = {
@@ -66,7 +66,7 @@ const SAVING_GOALS_REDUCER_CONFIG = {
   },
   [SAVING_GOALS_ACTIONS.APP_PROCESS_GOAL]: (state) => {
     const canProcess = Number.parseFloat(state.amount?.replaceAll(',', '')) > 0;
-    if (!canProcess) return { ...state, canShowSummary: false };
+    if (!canProcess) return { ...state, canSubmit: false };
 
     const today = new Date();
     const goalDate = new Date(state.reachDate.year, state.reachDate.month);
@@ -78,7 +78,7 @@ const SAVING_GOALS_REDUCER_CONFIG = {
 
     return {
       ...state,
-      canShowSummary: true,
+      canSubmit: true,
       totalMonth: numberOfMonths,
       monthlyAmount: new Intl.NumberFormat('en-US', {
         minimumFractionDigits: 2,
