@@ -1,4 +1,5 @@
 @import '/src/styles/variables';
+@import 'styles/mixins';
 
 .result-summary {
   margin-top: $margin-m;
@@ -13,15 +14,27 @@
     justify-content: space-between;
     padding: 0 $padding-l;
 
+    @include mobile-layout {
+      padding: 0 $padding-m;
+    }
+
     .label {
       font-family: 'Work Sans';
       font-size: 20px;
+
+      @include mobile-layout {
+        font-size: 18px;
+      }
     }
 
     .value {
       font-family: 'Rubik';
       font-size: 32px;
       color: $color-secondary;
+
+      @include mobile-layout {
+        font-size: 24px;
+      }
     }
   }
 

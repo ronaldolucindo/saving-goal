@@ -1,4 +1,5 @@
 @import '/src/styles/variables';
+@import 'styles/mixins';
 
 .date-input {
   display: flex;
@@ -8,6 +9,10 @@
   label {
     font-family: 'Work Sans';
     font-size: 14px;
+
+    @include mobile-layout {
+      font-size: 12px;
+    }
   }
 
   .input-box {
@@ -37,6 +42,10 @@
     align-items: center;
     justify-content: center;
     font-family: 'Work Sans';
+
+    @include mobile-layout {
+      font-size: 14px;
+    }
 
     .month {
       font-weight: 600;

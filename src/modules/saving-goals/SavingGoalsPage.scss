@@ -1,4 +1,5 @@
 @import '/src/styles/variables';
+@import 'styles/mixins';
 
 .saving-goals {
   display: flex;
@@ -21,6 +22,10 @@
     font-family: 'Work Sans';
     font-size: 16px;
     color: $color-gray400;
+
+    @include mobile-layout {
+      font-size: 14px;
+    }
   }
 
   .card-header {

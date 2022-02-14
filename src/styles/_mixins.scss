@@ -1,0 +1,7 @@
+@import 'styles/_variables';
+
+@mixin mobile-layout {
+  @media (max-width: $breakpoint-s) {
+    @content;
+  }
+}

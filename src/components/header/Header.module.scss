@@ -1,4 +1,5 @@
 @import 'styles/_variables';
+@import 'styles/mixins';
 
 .header {
   width: 100%;
@@ -9,4 +10,18 @@
   position: sticky;
   padding: 0 56px;
   background: #fff;
+
+  @include mobile-layout {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 32px;
+    @include mobile-layout {
+      width: 75px;
+      height: 24px;
+    }
+  }
 }

@@ -1,8 +1,13 @@
 @import '/src/styles/variables';
+@import 'styles/mixins';
 
 .card {
   padding: $padding-xl;
   border-radius: $border-radius-m;
   background: #fff;
   box-shadow: 0px 16px 32px rgba(30, 42, 50, 0.08);
+
+  @include mobile-layout {
+    padding: $padding-xl $padding-m;
+  }
 }
