@@ -31,21 +31,27 @@ function SavingGoalsPage() {
               </div>
             </div>
             <form noValidate onSubmit={actions.userSubmitsForm}>
-              <Input
-                label="Total amount"
-                value={state.amount}
-                onChange={actions.userTypesAmount}
-                pattern="[0-9]"
-                prepend={<DollarSign />}
-              />
-              <DateInput
-                label="Reach goal by"
-                yearValue={state.reachDate.year}
-                monthValue={actions.getMonthName()}
-                onNextMonth={actions.userSetsNextMonth}
-                onPrevMonth={actions.userSetsPrevMonth}
-                isPrevMonthDisabled={actions.isPrevMonthDisabled()}
-              />
+              <div className="input-container">
+                <div className="total-amount">
+                  <Input
+                    label="Total amount"
+                    value={state.amount}
+                    onChange={actions.userTypesAmount}
+                    pattern="[0-9]"
+                    prepend={<DollarSign />}
+                  />
+                </div>
+                <div className="reach-date">
+                  <DateInput
+                    label="Reach goal by"
+                    yearValue={state.reachDate.year}
+                    monthValue={actions.getMonthName()}
+                    onNextMonth={actions.userSetsNextMonth}
+                    onPrevMonth={actions.userSetsPrevMonth}
+                    isPrevMonthDisabled={actions.isPrevMonthDisabled()}
+                  />
+                </div>
+              </div>
 
               {state.canSubmit && (
                 <>

@@ -23,7 +23,7 @@
     border: 1px solid $color-gray50;
     height: $form-element-height;
     border-radius: $border-radius-s;
-    padding: 4px $padding-m;
+    padding: 4px 8px;
     background: #fff;
   }
 
@@ -42,6 +42,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Work Sans';
+    font-size: 16px;
 
     @include mobile-layout {
       font-size: 14px;

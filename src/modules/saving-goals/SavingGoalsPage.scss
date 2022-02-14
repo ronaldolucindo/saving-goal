@@ -40,6 +40,33 @@
     }
   }
 
+  .input-container {
+    display: flex;
+    column-gap: 16px;
+
+    @include mobile-layout {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 16px;
+    }
+
+    .total-amout {
+      width: 272px;
+
+      @include mobile-layout {
+        width: 100%;
+      }
+    }
+
+    .reach-date {
+      width: 192px;
+
+      @include mobile-layout {
+        width: 100%;
+      }
+    }
+  }
+
   .actions-container {
     display: flex;
     justify-content: center;
