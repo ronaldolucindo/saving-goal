@@ -13,17 +13,23 @@ function DateInput(props) {
           type="button"
           disabled={props.isPrevMonthDisabled}
           onClick={props.onPrevMonth}
+          data-testid="DateInput.prevMonthButton"
         >
           <ArrowLeft />
         </button>
         <div className={styles['value-container']}>
-          <p className={styles.month}>{props.monthValue}</p>
-          <p className={styles.year}>{props.yearValue}</p>
+          <p className={styles.month} data-testid="DateInput.monthValue">
+            {props.monthValue}
+          </p>
+          <p className={styles.year} data-testid="DateInput.yearValue">
+            {props.yearValue}
+          </p>
         </div>
         <button
           type="button"
           disabled={props.isNextMonthDisabled}
           onClick={props.onNextMonth}
+          data-testid="DateInput.nextMonthButton"
         >
           <ArrowRight />
         </button>
