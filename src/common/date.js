@@ -13,10 +13,21 @@ const MONTHS_NAMES = [
   'December',
 ];
 
+/**
+ * Get month name given index
+ * @param {number} month month index
+ * @returns {string} month name
+ */
 function getMonthName(month) {
   return MONTHS_NAMES[month] || '';
 }
 
+/**
+ * Get number of months between two dates
+ * @param {Date} dateFrom initial date
+ * @param {Date} dateTo final date
+ * @returns {number} month name
+ */
 function getMonthDifference(dateFrom, dateTo) {
   return (
     dateTo.getMonth() -

@@ -21,9 +21,6 @@ Button.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]),
-  name: PropTypes.string,
-  type: PropTypes.string,
-  onChange: PropTypes.func,
 };
 
 export default Button;

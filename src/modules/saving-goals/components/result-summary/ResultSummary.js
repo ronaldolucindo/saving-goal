@@ -26,9 +26,9 @@ function ResultSummary(props) {
 ResultSummary.propTypes = {
   monthDeadline: PropTypes.string,
   yearDeadline: PropTypes.number,
-  monthlyAmount: PropTypes.number,
+  monthlyAmount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   totalMonths: PropTypes.number,
-  totalValue: PropTypes.number,
+  totalValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default ResultSummary;
