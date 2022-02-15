@@ -26,7 +26,7 @@ function getMonthName(month) {
  * Get number of months between two dates
  * @param {Date} dateFrom initial date
  * @param {Date} dateTo final date
- * @returns {number} month name
+ * @returns {number} number of months
  */
 function getMonthDifference(dateFrom, dateTo) {
   return (
