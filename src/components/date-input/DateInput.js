@@ -5,10 +5,22 @@ import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 
 function DateInput(props) {
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowRight')
+      return !props.isNextMonthDisabled && props.onNextMonth();
+    else if (e.key === 'ArrowLeft')
+      return !props.isPrevMonthDisabled && props.onPrevMonth();
+  };
+
   return (
     <div className={styles['date-input']}>
       <label>{props.label}</label>
-      <div className={styles['input-box']}>
+      <div
+        tabIndex="0"
+        onKeyDown={handleKeyDown}
+        className={styles['input-box']}
+        data-testid={'DateInput.inputBox'}
+      >
         <button
           type="button"
           disabled={props.isPrevMonthDisabled}

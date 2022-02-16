@@ -30,6 +30,17 @@ test('calls onPrevMonth function', () => {
   expect(onNextMonth).not.toBeCalled();
 });
 
+test('calls change functions on arrows press', () => {
+  render(<DateInput onNextMonth={onNextMonth} onPrevMonth={onPrevMonth} />);
+
+  const inputBox = screen.getByTestId('DateInput.inputBox');
+  userEvent.click(inputBox);
+  userEvent.keyboard('{ArrowLeft}');
+  expect(onPrevMonth).toBeCalled();
+  userEvent.keyboard('{ArrowRight}');
+  expect(onNextMonth).toBeCalled();
+});
+
 test('disables next month button', () => {
   render(
     <DateInput
